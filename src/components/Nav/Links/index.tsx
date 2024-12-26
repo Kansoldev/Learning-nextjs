@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
   {
@@ -20,10 +23,20 @@ const links = [
 ];
 
 const Links = () => {
+  const pathname = usePathname();
+
   return (
-    <div>
+    <div className="flex items-center gap-6">
       {links.map((link) => (
-        <Link key={link.title} href={link.path}>
+        <Link
+          key={link.title}
+          href={link.path}
+          className={`text-base ${
+            pathname == link.path
+              ? "bg-white text-[#0d0c22] p-[10px] rounded-[20px] font-medium text-center"
+              : ""
+          }`}
+        >
           {link.title}
         </Link>
       ))}
