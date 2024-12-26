@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const links = [
+type linksType = { title: string; path: string }[];
+
+const links: linksType = [
   {
     title: "Homepage",
     path: "/",
