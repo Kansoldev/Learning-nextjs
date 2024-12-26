@@ -16,11 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <NavBar />
-
-        {children}
-
-        <Footer />
+        <div className="container mx-auto h-screen flex flex-col justify-between pb-5">
+          <NavBar />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
